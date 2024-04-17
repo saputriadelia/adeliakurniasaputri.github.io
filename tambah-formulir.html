@@ -1,0 +1,41 @@
+<!-- File: index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Konten blog -->
+    <div id="blog-container">
+        <h3 id="blog-title">Judul Blog</h3>
+        <p id="blog-description">Deskripsi Blog</p>
+        <div id="blog-image" style="background-image: url('gambar-blog.jpg');"></div>
+    </div>
+
+    <!-- Tombol Edit -->
+    <button onclick="editBlog()">Edit Blog</button>
+
+    <!-- Sertakan file JavaScript untuk edit -->
+    <script>
+        function editBlog() {
+    var title = document.querySelector('#blog-title').textContent;
+    var description = document.querySelector('#blog-description').textContent;
+    var imageUrl = document.querySelector('#blog-image').style.backgroundImage;
+
+    var newTitle = prompt('Masukkan judul baru:', title);
+    var newDescription = prompt('Masukkan keterangan baru:', description);
+    var newImageUrl = prompt('Masukkan URL gambar baru:', imageUrl);
+
+    if (newTitle && newDescription && newImageUrl) {
+        document.querySelector('#blog-title').textContent = newTitle;
+        document.querySelector('#blog-description').textContent = newDescription;
+        document.querySelector('#blog-image').style.backgroundImage = 'url(' + newImageUrl + ')';
+    }
+}
+    </script>
+</body>
+</html>
